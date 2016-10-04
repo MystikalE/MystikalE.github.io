@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - 5.5
+  - 5.6
+
+sudo: false
+
+notifications:
+    email: false
+
+script:
+  - php artisan migrate --env=testing --no-interaction -vvv
+  - vendor/bin/phpunit
+
+before_script:
+  - mysql -e 'create database vacstatus_test;'
+  - composer self-update
+  - composer install --dev --prefer-source --no-interaction
+  - chmod -R 777 storage
+  - chmod -R 777 bootstrap/cache
+  - php artisan migrate:install --env=testing --no-interaction -vvv

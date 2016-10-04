@@ -1,0 +1,6 @@
+suites:
+    main:
+        namespace: VacStatus
+        psr4_prefix: VacStatus
+        src_path: app
+        spec_path: spec

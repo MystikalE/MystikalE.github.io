@@ -1,0 +1,11 @@
+/vendor
+/node_modules
+.env
+composer.lock
+Thumbs.db
+.phpintel
+
+/public/css
+/public/js
+
+/.idea
